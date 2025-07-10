@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <h1>Registration Form</h1>
+    <form action="">
+        <label for="email" >Email </label><br>
+        <input type="email" id="email" ><br>
+        <label for="number" >Mobile</label><br>
+        <input type="number" id="mobile"><br>
+        <label for="password1">Password</label><br>
+        <input type="password" name="password1" id="p1"><span><img src="password-hidding-icon.jpg" alt="see" height="12px" width="20px" id="see1"></span><br>
+        <label for="password2">Confirm Password</label><br>
+        <input type="password" name="password2" id="p2"><span><img src="password-hidding-icon.jpg" alt="see" height="12px" width="20px" id="see2"></span><br>
+        <span>Captcha : </span><span id="captcha"></span><br>
+        <input type="text" name="" id="captchainp">
+        <br><br>
+        <button type="submit" disabled>Submit</button>
+    </form>
+
+    <script>
+        let a1 = 0
+        let a2 = 0
+        let a3 = 0
+        let a4 = 0
+        let a5 = 0
+        let paas2 = document.querySelector("#p2")
+        let captcha = document.querySelector("#captchainp")
+
+        document.querySelector("#p1").addEventListener("input", (e) => {
+            let p1 = e.target.value
+            console.log("p1 lenght " + p1.length);
+            if (p1.length > 0) {
+                a1 = 1
+                btnt()
+            }
+            else {
+                btnf()
+                a1 = 0
+            }
+            console.log("p1="+p1+" p1.value="+p1.value+" p2="+p2+" p2.value="+p2.value);
+            
+            if (p1 === p2.value) {
+                console.log("true");
+                paas2.style.borderColor = "black"
+            }
+            else if (p1 != p2.value) {
+                console.log(p2);
+                paas2.style.borderColor = "red"
+                btnf()
+                
+            }
+        })
+        document.querySelector("#p2").addEventListener("input", (e) => {
+            let p2 = e.target.value
+            
+            if (p2.length > 0) {
+                a2 = 1
+                btnt()
+            }
+            else {
+                btnf()
+                a2 = 0
+            }
+
+            if (p1.value === p2) {
+                console.log("true");
+                paas2.style.borderColor = "black"
+            }
+            else if (p1.value != p2) {
+                console.log(p2);
+                paas2.style.borderColor = "red"
+                btnf()
+                
+            }
+
+        })
+        let pass = ""
+        let arr = ["a", "b", "c", "1", "2", "3"]
+        for (let index = 0; index < 3; index++) {
+            pass = pass + arr[Math.floor(Math.random() * arr.length)]
+
+        }
+        let cap1 = document.querySelector("#captcha")
+        cap1.textContent = pass
+        let cap2 = ""
+        captcha.addEventListener("input", (e) => {
+            cap2 = e.target.value
+            console.log("cap2 lenght " + cap2.length);
+
+            if (cap2 === pass) {
+                console.log("true");
+                captcha.style.borderColor = "black"
+                if (cap2.length > 0) {
+                    a3 = 1
+                    btnt()
+                }
+                else {
+                    btnf()
+                    a3 = 0
+                }
+            }
+            else if (cap2 != pass) {
+                captcha.style.borderColor = "red"
+                btnf()
+                    a3 = 0
+            }
+
+        })
+
+        let email = document.querySelector("#email")
+        let mobile = document.querySelector("#mobile")
+
+        email.addEventListener("input", (e) => {
+            let e1 = e.target.value
+            console.log(e1);
+            
+            if (e1.length > 0) {
+                a4 = 1
+                btnt()
+            }
+            else {
+                btnf()
+                a4 = 0
+            }
+        })
+         mobile.addEventListener("input", (e) => {
+            let m1 = e.target.value
+            
+            if (m1.length > 9) {
+                a5 = 1
+                btnt()
+                mobile.style.borderColor="black"
+            }
+            else {
+                btnf()
+                a5 = 0
+                mobile.style.borderColor="red"
+            }
+        })
+        
+       document.querySelector("#see1").addEventListener("click",()=>{
+            if(document.querySelector("#p1").getAttribute("type")==="password")
+            document.querySelector("#p1").setAttribute("type","text")
+            else
+            document.querySelector("#p1").setAttribute("type","password")
+       }) 
+
+       document.querySelector("#see2").addEventListener("click",()=>{
+            if(document.querySelector("#p2").getAttribute("type")==="password")
+            document.querySelector("#p2").setAttribute("type","text")
+            else
+            document.querySelector("#p2").setAttribute("type","password")
+       }) 
+        
+
+        function btnt() {
+            if (a1 === 1 && a2 === 1 && a3 === 1 && a4 === 1 && a5 === 1) 
+            { document.querySelector("button").disabled = false }
+        }
+
+        function btnf() {
+            document.querySelector("button").disabled = true
+        }
+
+
+
+    </script>
+</body>
+
+</html>

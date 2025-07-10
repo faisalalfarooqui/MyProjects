@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Calculator</title>
+</head>
+<body class="p-10">
+
+    <div class="text-xl">Calculator</div>
+    
+    <input type="text" id="q" class="border rounded w-46 py-2 px-3 text-gray-700 m-1">
+
+    <div>
+        <div class="flex">
+            <div id="seven" class="h-10 w-10 border rounded m-1 flex items-center justify-center">7</div>
+            <div id="eight" class="h-10 w-10 border rounded m-1 flex items-center justify-center">8</div>
+            <div id="nine" class="h-10 w-10 border rounded m-1 flex items-center justify-center">9</div>
+            <div id="divide" class="h-10 w-10 border rounded m-1 flex items-center justify-center">/</div>
+        </div>
+        <div class="flex">
+            <div id="four" class="h-10 w-10 border rounded m-1 flex items-center justify-center">4</div>
+            <div id="five" class="h-10 w-10 border rounded m-1 flex items-center justify-center">5</div>
+            <div id="six" class="h-10 w-10 border rounded m-1 flex items-center justify-center">6</div>
+            <div id="mul" class="h-10 w-10 border rounded m-1 flex items-center justify-center">x</div>
+        </div>
+        <div class="flex">
+            <div id="one" class="h-10 w-10 border rounded m-1 flex items-center justify-center">1</div>
+            <div id="two" class="h-10 w-10 border rounded m-1 flex items-center justify-center">2</div>
+            <div id="three" class="h-10 w-10 border rounded m-1 flex items-center justify-center">3</div>
+            <div id="sub" class="h-10 w-10 border rounded m-1 flex items-center justify-center">-</div>
+        </div>
+        <div class="flex">
+            <div id="zero" class="h-10 w-10 border rounded m-1 flex items-center justify-center">0</div>
+            <div id="dot" class="h-10 w-10 border rounded m-1 flex items-center justify-center">AC</div>
+            <div id="add" class="h-10 w-10 border rounded m-1 flex items-center justify-center">+</div>
+            <div id="equal" class="h-10 w-10 border rounded m-1 flex items-center justify-center">=</div>
+        </div>
+    </div>
+
+<script>
+    let input=""
+    let prev=""
+    let next=""
+    let inp = document.querySelector("#q")
+    let one = document.querySelector("#one")
+    let two = document.querySelector("#two")
+    let three = document.querySelector("#three")
+    let four = document.querySelector("#four")
+    let five = document.querySelector("#five")
+    let six = document.querySelector("#six")
+    let seven = document.querySelector("#seven")
+    let eight = document.querySelector("#eight")
+    let nine = document.querySelector("#nine")
+    let zero = document.querySelector("#zero")
+
+    one.addEventListener("click",()=>{
+        input="1"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    two.addEventListener("click",()=>{
+        input="2"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    three.addEventListener("click",()=>{
+        input="3"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    four.addEventListener("click",()=>{
+        input="4"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    five.addEventListener("click",()=>{
+        input="5"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    six.addEventListener("click",()=>{
+        input="6"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    seven.addEventListener("click",()=>{
+        input="7"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    eight.addEventListener("click",()=>{
+        input="8"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    nine.addEventListener("click",()=>{
+        input="9"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    zero.addEventListener("click",()=>{
+        input="0"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    dot.addEventListener("click",()=>{
+        // input="."
+        // console.log(input);
+        // inp.value=inp.value+input
+        inp.value=""
+        prev=""
+
+    })
+    divide.addEventListener("click",()=>{
+        prev=inp.value
+        inp.value=""
+        input="/"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    mul.addEventListener("click",()=>{
+        prev=inp.value
+        inp.value=""
+        input="*"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    sub.addEventListener("click",()=>{
+        prev=inp.value
+        inp.value=""
+        input="-"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    add.addEventListener("click",()=>{
+        prev=inp.value
+        inp.value=""
+        input="+"
+        console.log(input);
+        inp.value=inp.value+input
+    })
+    equal.addEventListener("click",()=>{
+        let val1 = parseFloat(prev)
+        let operator = inp.value.slice(0,1)
+        console.log(operator);
+        let val2 = parseFloat(inp.value.slice(1))
+        console.log(val1);
+        console.log(val2);
+        switch (operator) {
+            case "+":
+                inp.value=val1+val2
+                break;
+            case "-":
+                inp.value=val1-val2
+                break;
+            case "*":
+                inp.value=val1*val2
+                break;
+            case "/":
+                inp.value=val1/val2
+                break;
+            default:
+                break;
+        }
+    })
+
+    
+    
+    
+    
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<body>
+    <h1>Digital Clock</h1>
+    <div id="time">
+
+    </div>
+
+    <script>
+        let d= new Date()
+        console.log(d);
+        let t=d.toTimeString()
+        let date=d.toDateString()
+        console.log(date);
+        console.log(t);
+        let x = t.slice(0,2)
+        let a = t.slice(2,8)
+        console.log(a);
+        
+        console.log(x);
+        y=parseInt(x)
+
+        let m="AM"
+        if(y>12){
+            y=y-12
+            m="PM"
+        }
+
+        let dt = date+" "+y+a+" "+m+t.slice(8)
+        console.log(dt);
+        document.querySelector("#time").textContent=dt
+    
+    </script>
+</body>
+</html>

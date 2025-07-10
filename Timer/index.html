@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+
+<body>
+    <div><h1>Timer</h1></div>
+    <label for="min">Min</label>
+    <input type="number" name="" id="min">
+    <label for="ssec">Sec</label>
+    <input type="number" name="" id="sec">
+    <button id="btn">Start</button>
+    <br><br>
+    <div id="timer" style="font-size: 50px;">
+        <span id="m">2</span>
+        <span>:</span>
+        <span id="s">25</span>
+    </div>
+
+    <script>
+        let f=0
+        let g=0
+        let inpm = document.querySelector("#min")
+        let inps = document.querySelector("#sec")
+        let minutes = document.querySelector("#m")
+        let seconds = document.querySelector("#s")
+        let y = parseInt(minutes.textContent)
+        let x = parseInt(seconds.textContent)
+        let a = setInterval(() => {
+
+            x = x - 1
+            if(x==-1){f=1
+                console.log("trt");
+                
+            }
+            if (x == 0 && y == 0) { clearInterval(a) }
+            else if (x < 0) { x = 59 }
+
+            seconds.textContent = x
+        }, 1000)
+        let b = setInterval(() => {
+            if(x==59 && f==1)
+            {y = y-1
+                f=0
+                console.log("y is "+y);
+                
+            }
+            if (y == 0) { clearInterval(b) }
+            minutes.textContent = y
+        },0)
+let c;
+let d;
+
+        document.querySelector("#btn").addEventListener("click", () => {
+                 
+            clearInterval(a)
+            clearInterval(b)
+            clearInterval(c)
+            clearInterval(d)
+
+            y = parseInt(inpm.value)
+            x = parseInt(inps.value)
+            seconds.textContent = x
+            minutes.textContent = y
+            inpm.value=""
+            inps.value=""
+            
+            c = setInterval(() => {
+
+                x = x - 1
+                if(x==-1){g=1}
+                if (x == 0 && y == 0) { clearInterval(c) }
+                else if (x < 0) { x = 59 }
+
+                seconds.textContent = x
+            }, 1000)
+            d = setInterval(() => {
+                if(x==59 && g==1){
+                y = y - 1
+                g=0}
+                if (y == 0) { clearInterval(d) }
+                minutes.textContent = y
+            },0)
+        })
+
+
+
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

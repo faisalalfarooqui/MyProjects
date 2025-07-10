@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Traffic Signal</title>
+</head>
+
+<body>
+    <div id="outer" class="flex">
+        <div id="main1" class="w-35 bg-gray-900 p-5 m-10">
+            <div id="red1" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+            <div id="yellow1" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+            <div id="green1" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+        </div>
+        <div id="main2" class="w-35 bg-gray-900 p-5 m-10">
+            <div id="red2" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+            <div id="yellow2" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+            <div id="green2" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+        </div>
+        <div id="main3" class="w-35 bg-gray-900 p-5 m-10">
+            <div id="red3" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+            <div id="yellow3" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+            <div id="green3" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+        </div>
+        <div id="main4" class="w-35 bg-gray-900 p-5 m-10">
+            <div id="red4" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+            <div id="yellow4" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+            <div id="green4" class="h-20 w-20 rounded-full bg-gray-200 m-2"></div>
+        </div>
+    </div>
+
+    <script>
+        let r1 = document.querySelector("#red1")
+        let y1 = document.querySelector("#yellow1")
+        let g1 = document.querySelector("#green1")
+        let r2 = document.querySelector("#red2")
+        let y2 = document.querySelector("#yellow2")
+        let g2 = document.querySelector("#green2")
+        let r3 = document.querySelector("#red3")
+        let y3 = document.querySelector("#yellow3")
+        let g3 = document.querySelector("#green3")
+        let r4 = document.querySelector("#red4")
+        let y4 = document.querySelector("#yellow4")
+        let g4 = document.querySelector("#green4")
+
+        setTimeout(() => {
+                g1.classList.replace("bg-gray-200", "bg-green-500")
+                y1.classList.replace("bg-yellow-500", "bg-gray-200")
+                r1.classList.replace("bg-red-500", "bg-gray-200")
+            }, 0)
+            setTimeout(() => {
+                y1.classList.replace("bg-gray-200", "bg-yellow-500")
+                g1.classList.replace("bg-green-500", "bg-gray-200")
+                r1.classList.replace("bg-red-500", "bg-gray-200")
+            }, 3000)
+            setTimeout(() => {
+                r1.classList.replace("bg-gray-200", "bg-red-500")
+                y1.classList.replace("bg-yellow-500", "bg-gray-200")
+                g1.classList.replace("bg-green-500", "bg-gray-200")
+            }, 4000)
+
+            setTimeout(() => {
+                g2.classList.replace("bg-gray-200", "bg-green-500")
+                y2.classList.replace("bg-yellow-500", "bg-gray-200")
+                r2.classList.replace("bg-red-500", "bg-gray-200")
+            },4000)
+            setTimeout(() => {
+                y2.classList.replace("bg-gray-200", "bg-yellow-500")
+                g2.classList.replace("bg-green-500", "bg-gray-200")
+                r2.classList.replace("bg-red-500", "bg-gray-200")
+            }, 7000)
+            setTimeout(() => {
+                r2.classList.replace("bg-gray-200", "bg-red-500")
+                y2.classList.replace("bg-yellow-500", "bg-gray-200")
+                g2.classList.replace("bg-green-500", "bg-gray-200")
+            }, 8000)
+
+            setTimeout(() => {
+                g3.classList.replace("bg-gray-200", "bg-green-500")
+                y3.classList.replace("bg-yellow-500", "bg-gray-200")
+                r3.classList.replace("bg-red-500", "bg-gray-200")
+            },8000)
+            setTimeout(() => {
+                y3.classList.replace("bg-gray-200", "bg-yellow-500")
+                g3.classList.replace("bg-green-500", "bg-gray-200")
+                r3.classList.replace("bg-red-500", "bg-gray-200")
+            }, 11000)
+            setTimeout(() => {
+                r3.classList.replace("bg-gray-200", "bg-red-500")
+                y3.classList.replace("bg-yellow-500", "bg-gray-200")
+                g3.classList.replace("bg-green-500", "bg-gray-200")
+            }, 12000)
+
+            setTimeout(() => {
+                g4.classList.replace("bg-gray-200", "bg-green-500")
+                y4.classList.replace("bg-yellow-500", "bg-gray-200")
+                r4.classList.replace("bg-red-500", "bg-gray-200")
+            },12000)
+            setTimeout(() => {
+                y4.classList.replace("bg-gray-200", "bg-yellow-500")
+                g4.classList.replace("bg-green-500", "bg-gray-200")
+                r4.classList.replace("bg-red-500", "bg-gray-200")
+            }, 15000)
+            setTimeout(() => {
+                r4.classList.replace("bg-gray-200", "bg-red-500")
+                y4.classList.replace("bg-yellow-500", "bg-gray-200")
+                g4.classList.replace("bg-green-500", "bg-gray-200")
+            }, 16000)
+
+        setInterval(() => {
+            setTimeout(() => {
+                g1.classList.replace("bg-gray-200", "bg-green-500")
+                y1.classList.replace("bg-yellow-500", "bg-gray-200")
+                r1.classList.replace("bg-red-500", "bg-gray-200")
+            }, 0)
+            setTimeout(() => {
+                y1.classList.replace("bg-gray-200", "bg-yellow-500")
+                g1.classList.replace("bg-green-500", "bg-gray-200")
+                r1.classList.replace("bg-red-500", "bg-gray-200")
+            }, 3000)
+            setTimeout(() => {
+                r1.classList.replace("bg-gray-200", "bg-red-500")
+                y1.classList.replace("bg-yellow-500", "bg-gray-200")
+                g1.classList.replace("bg-green-500", "bg-gray-200")
+            }, 4000)
+
+            setTimeout(() => {
+                g2.classList.replace("bg-gray-200", "bg-green-500")
+                y2.classList.replace("bg-yellow-500", "bg-gray-200")
+                r2.classList.replace("bg-red-500", "bg-gray-200")
+            },4000)
+            setTimeout(() => {
+                y2.classList.replace("bg-gray-200", "bg-yellow-500")
+                g2.classList.replace("bg-green-500", "bg-gray-200")
+                r2.classList.replace("bg-red-500", "bg-gray-200")
+            }, 7000)
+            setTimeout(() => {
+                r2.classList.replace("bg-gray-200", "bg-red-500")
+                y2.classList.replace("bg-yellow-500", "bg-gray-200")
+                g2.classList.replace("bg-green-500", "bg-gray-200")
+            }, 8000)
+
+            setTimeout(() => {
+                g3.classList.replace("bg-gray-200", "bg-green-500")
+                y3.classList.replace("bg-yellow-500", "bg-gray-200")
+                r3.classList.replace("bg-red-500", "bg-gray-200")
+            },8000)
+            setTimeout(() => {
+                y3.classList.replace("bg-gray-200", "bg-yellow-500")
+                g3.classList.replace("bg-green-500", "bg-gray-200")
+                r3.classList.replace("bg-red-500", "bg-gray-200")
+            }, 11000)
+            setTimeout(() => {
+                r3.classList.replace("bg-gray-200", "bg-red-500")
+                y3.classList.replace("bg-yellow-500", "bg-gray-200")
+                g3.classList.replace("bg-green-500", "bg-gray-200")
+            }, 12000)
+
+            setTimeout(() => {
+                g4.classList.replace("bg-gray-200", "bg-green-500")
+                y4.classList.replace("bg-yellow-500", "bg-gray-200")
+                r4.classList.replace("bg-red-500", "bg-gray-200")
+            },12000)
+            setTimeout(() => {
+                y4.classList.replace("bg-gray-200", "bg-yellow-500")
+                g4.classList.replace("bg-green-500", "bg-gray-200")
+                r4.classList.replace("bg-red-500", "bg-gray-200")
+            }, 15000)
+            setTimeout(() => {
+                r4.classList.replace("bg-gray-200", "bg-red-500")
+                y4.classList.replace("bg-yellow-500", "bg-gray-200")
+                g4.classList.replace("bg-green-500", "bg-gray-200")
+            }, 16000)
+        }, 16000)
+
+    </script>
+</body>
+
+</html>

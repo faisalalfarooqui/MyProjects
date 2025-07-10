@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+</head>
+<body>
+    <h1>Image Slider</h1>
+    <div id="d"><img src="banalore_line.jpg" alt="" height="500px" width="500px" id="img"></div>
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+
+    <script>
+        let arr = ["banalore_line.jpg","OR7TU70.jpg","Scene-20.jpg"]
+        let p=document.querySelector("#prev")
+        let n=document.querySelector("#next")
+        let img=document.querySelector("#img")
+        let i=0
+        p.addEventListener("click",()=>{
+            i--;
+            if(i<0){
+                i=arr.length-1
+            }
+            
+            img.setAttribute("src",arr[i])
+        })
+        n.addEventListener("click",()=>{
+            i++;
+            if(i>arr.length-1){
+                i=0
+            }
+            img.setAttribute("src",arr[i])
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Create Div</title>
+</head>
+<body>
+    
+</body>
+<script>
+   const elem = document.createElement("div")
+   elem.innerHTML="<p>This div and paragraph elements are created using javascript</p>"
+   document.body.append(elem)
+   elem.setAttribute("class","bg-yellow-300")
+   elem.classList.add("p-10")
+   elem.classList.add("m-10")
+</script>
+</html>

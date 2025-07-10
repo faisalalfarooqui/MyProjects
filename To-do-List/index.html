@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task</title>
+</head>
+
+<body>
+    <div id="main">
+        <input type="text" id="inp" placeholder="Enter task">
+        <button id="add" disabled>Add</button>
+        <br><br>
+        <input type="number" id="index" placeholder="Enter SerialNo. to Delete">
+        <button id="delete" disabled>Delete</button>
+        <div><h1>My Task</h1></div>
+        <div id="list"></div>
+    </div>
+</body>
+
+<script>
+    let list=document.querySelector("#list")
+    let addb = document.querySelector("#add")
+    let dltb = document.querySelector("#delete")
+    let inpt
+    let ind
+    let arr = []
+    document.querySelector("#inp").addEventListener("input", (e) => {
+       inpt = e.target.value
+        if (e.target.value.length > 0)
+            addt()
+        else
+            addf()
+    })
+    document.querySelector("#index").addEventListener("input", (e) => {
+        ind = e.target.value
+        if (e.target.value.length > 0)
+            dltt()
+        else
+            dltf()
+    })
+
+    function addt() {
+        addb.disabled = false
+    }
+    function addf() {
+        addb.disabled = true
+    }
+    function dltt() {
+        dltb.disabled = false
+    }
+    function dltf() {
+        dltb.disabled = true
+    }
+
+    addb.addEventListener("click",()=>{
+       arr.push(inpt)
+       console.log(arr);
+       document.querySelector("#inp").value=""
+       addf() 
+       display()
+       
+    })
+
+    dltb.addEventListener("click",()=>{
+       if(ind<=0 || ind>arr.length)
+       alert("Incorrect Serial No.")
+        else
+        arr.splice(ind-1,1)
+       console.log(arr);
+       document.querySelector("#index").value=""
+
+       dltf() 
+       display()
+       
+    })
+    
+    
+    function display() {
+        let i=0
+        list.textContent=""
+        arr.forEach((e)=>{
+            i++
+            const newdiv=document.createElement("div")
+            newdiv.textContent=i+". "+e
+            list.appendChild(newdiv)
+          
+        }) 
+    }
+
+    
+
+
+
+</script>
+
+</html>
